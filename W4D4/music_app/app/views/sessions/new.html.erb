@@ -1,0 +1,31 @@
+<a href="<%= new_user_url %>" class="sign-in button">SIGNN IF YA DON'T GOT IT</a>
+<h1>LOGINNNNNNNNNNNNNNNNNN</h1>
+
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+  <br>
+  <br>
+<% end %>
+
+<br>
+
+<form action="<%= session_url %>" method="post">
+  <!-- <input type="hidden" method="_method" value="get"> -->
+  <input type="hidden" 
+         name="authenticity_token"
+         value="<% form_authenticity_token %>">
+  <label >Email:
+    <input type="text" name='user[email]'>
+  </label>
+  <br>
+  <br>
+  <label>Password:
+    <input type="text" name='user[password]'>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value='COME ON LET ME IN'>
+</form>
